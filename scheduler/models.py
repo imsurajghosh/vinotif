@@ -4,7 +4,8 @@ from django.db import models
 # Create your models here.
 # DATABASE SCHEMA HERE
 # THINK OF TABLES/RELATIONS
-
+# DO TABLES HAVE METHODS ? NO
+# Hence no __init__ method here
 
 class Notification_Payload(models.Model):
     header = models.CharField(max_length=250)
@@ -18,6 +19,14 @@ class Notification_Payload(models.Model):
 class Notification(Notification_Payload):
     to_be_sended_on = models.DateTimeField()
 
+    def __str__(self):
+        return self.header+"->"+self.content+"url:"+self.image_url
+
+
 class User(models.Model):
+
     name = models.CharField(max_length=250)
     mailid = models.CharField(max_length = 250)
+
+    def __str__(self):
+        return self.name+"\t mail:"+self.mailid
