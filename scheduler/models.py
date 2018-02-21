@@ -1,39 +1,23 @@
 from django.db import models
 
+
 # Create your models here.
 # DATABASE SCHEMA HERE
 # THINK OF TABLES/RELATIONS
 
 
-class Notification_Payload():
-
+class Notification_Payload(models.Model):
     header = models.CharField(max_length=250)
     content = models.CharField(max_length=1000)
     image_url = models.CharField(max_length=250)
 
-    def __init__(self, header, content, image_url):
-        self.header = header
-        self.content = content
-        self.image_url = image_url
+    class Meta:
+        abstract = True
 
-    # series of getter functions
 
-    def getheader(self):
-        return self.header
-
-    def getcontent(self):
-        return self.content
-
-    def getimage_url(self):
-        return self.image_url
-
-class Notification(models.Model, Notification_Payload):
-
+class Notification(Notification_Payload):
     to_be_sended_on = models.DateTimeField()
 
-    def __init__(self, header, content, image_url,to_be_sended_on):
-        Notification_Payload.__init__(self,header,content,image_url)
-        self.to_be_sended_on = to_be_sended_on
-
-    def getto_be_sended_on(self):
-        return self.to_be_sended_on
+class User(models.Model):
+    name = models.CharField(max_length=250)
+    mailid = models.CharField(max_length = 250)
