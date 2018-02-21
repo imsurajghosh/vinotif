@@ -6,4 +6,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("<h1>uptil video 5 new boston")
+    return HttpResponse("<h1>uptil video 5 new boston</h1>")

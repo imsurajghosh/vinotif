@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# PRE-INSTALLED APPS
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -74,6 +74,8 @@ WSGI_APPLICATION = 'vinotif.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+
+# Default is sqlite3
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
