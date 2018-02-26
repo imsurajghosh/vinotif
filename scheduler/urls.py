@@ -11,7 +11,8 @@ urlpatterns = [
     # url(r'^$', 'vinotif.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     # format url(matching pattern,response_to_user )
-    url(r'^$',views.index,name = 'index'),
+    url(r'^users', views.users, name = 'users'),
+    url(r'^notifs', views.notifs, name = 'notifs'),
     # this matches blank URL
     # this matches scheduler immediately after url
 ]
